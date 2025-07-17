@@ -158,17 +158,17 @@ const AboutMe = memo(() => {
     []
   );
 
-  const interests = useMemo(
-    () => [
-      { name: "AI & Machine Learning", icon: "🤖", level: 85 },
-      // { name: "Blockchain Development", icon: "⛓️", level: 75 },
-      { name: "Cybersecurity", icon: "🔒", level: 80 },
-      { name: "Game Development", icon: "🎮", level: 70 },
-      // { name: "UI/UX Design", icon: "🎨", level: 85 },
-      // { name: "DevOps", icon: "⚙️", level: 75 },
-    ],
-    []
-  );
+  // const interests = useMemo(
+  //   () => [
+  //     { name: "AI & Machine Learning", icon: "🤖", level: 85 },
+  //     // { name: "Blockchain Development", icon: "⛓️", level: 75 },
+  //     { name: "Cybersecurity", icon: "🔒", level: 80 },
+  //     { name: "Game Development", icon: "🎮", level: 70 },
+  //     // { name: "UI/UX Design", icon: "🎨", level: 85 },
+  //     // { name: "DevOps", icon: "⚙️", level: 75 },
+  //   ],
+  //   []
+  // );
 
   const renderSpecialization = useCallback(
     (spec, index) => (
@@ -214,17 +214,17 @@ const AboutMe = memo(() => {
     []
   );
 
-  const renderInterest = useCallback(
-    (interest, index) => (
-      <div key={`${interest.name}-${index}`} className="interest-card">
-        <div className="interest-icon">{interest.icon}</div>
-        <div className="interest-content">
-          <h4 className="interest-name">{interest.name}</h4>
-        </div>
-      </div>
-    ),
-    []
-  );
+  // const renderInterest = useCallback(
+  //   (interest, index) => (
+  //     <div key={`${interest.name}-${index}`} className="interest-card">
+  //       <div className="interest-icon">{interest.icon}</div>
+  //       <div className="interest-content">
+  //         <h4 className="interest-name">{interest.name}</h4>
+  //       </div>
+  //     </div>
+  //   ),
+  //   []
+  // );
 
   return (
     <div className="about-page">
