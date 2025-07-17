@@ -1,0 +1,244 @@
+.home-container {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Content styling */
+.content {
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}
+
+.cyber-title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #00ffff;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  text-shadow: 
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff,
+    0 0 40px #00ffff;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+.cyber-subtitle {
+  font-size: 1.5rem;
+  color: #ff00ff;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-shadow: 
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff;
+  animation: subtitlePulse 3s ease-in-out infinite;
+}
+
+/* Cyber grid background */
+.cyber-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+  z-index: 1;
+}
+
+/* Floating particles */
+.cyber-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #00ffff, transparent),
+    radial-gradient(2px 2px at 40px 70px, #ff00ff, transparent),
+    radial-gradient(1px 1px at 90px 40px, #ffff00, transparent),
+    radial-gradient(1px 1px at 130px 80px, #00ff00, transparent),
+    radial-gradient(2px 2px at 160px 30px, #ff0080, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: particleFloat 15s linear infinite;
+  z-index: 2;
+}
+
+/* Cyber scan lines */
+.cyber-scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 255, 0.03) 2px,
+    rgba(0, 255, 255, 0.03) 4px
+  );
+  animation: scanLines 0.1s linear infinite;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Neon glow effect */
+.home-container {
+  box-shadow: 
+    inset 0 0 100px rgba(0, 255, 255, 0.1),
+    0 0 50px rgba(0, 255, 255, 0.2),
+    0 0 100px rgba(0, 255, 255, 0.1);
+}
+
+/* Animated border */
+.cyber-border {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    #00ffff, #ff00ff, #ffff00, #00ff00, #ff0080, #00ffff);
+  background-size: 400% 400%;
+  animation: borderGlow 3s ease-in-out infinite;
+  z-index: -1;
+  border-radius: 4px;
+}
+
+/* Title glow animation */
+@keyframes titleGlow {
+  0% {
+    text-shadow: 
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #00ffff,
+      0 0 40px #00ffff;
+  }
+  100% {
+    text-shadow: 
+      0 0 20px #00ffff,
+      0 0 30px #00ffff,
+      0 0 40px #00ffff,
+      0 0 50px #00ffff,
+      0 0 60px #00ffff;
+  }
+}
+
+/* Subtitle pulse animation */
+@keyframes subtitlePulse {
+  0%, 100% {
+    opacity: 0.8;
+    text-shadow: 
+      0 0 10px #ff00ff,
+      0 0 20px #ff00ff;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 
+      0 0 15px #ff00ff,
+      0 0 25px #ff00ff,
+      0 0 35px #ff00ff;
+  }
+}
+
+/* Grid animation */
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+/* Particle animation */
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+/* Border glow animation */
+@keyframes borderGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Scan lines animation */
+@keyframes scanLines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+/* Ensure smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #0a0a0a;
+}
+
+/* Cyber text glow effect for any text inside */
+.home-container h1,
+.home-container h2,
+.home-container h3,
+.home-container p {
+  text-shadow: 
+    0 0 10px rgba(0, 255, 255, 0.5),
+    0 0 20px rgba(0, 255, 255, 0.3),
+    0 0 30px rgba(0, 255, 255, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cyber-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+  }
+  
+  .cyber-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .cyber-grid {
+    background-size: 30px 30px;
+  }
+  
+  .cyber-particles {
+    background-size: 150px 75px;
+  }
+}

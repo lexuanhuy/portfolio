@@ -1,0 +1,149 @@
+.cyber-navigation {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.nav-container {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border: 2px solid #00ffff;
+  border-radius: 15px;
+  padding: 5px;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.3),
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.nav-bar {
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  background: linear-gradient(90deg, 
+    rgba(0, 255, 255, 0.1), 
+    rgba(255, 0, 255, 0.1), 
+    rgba(0, 255, 255, 0.1));
+  border-radius: 10px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #00ffff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 80px;
+}
+
+.nav-item:hover {
+  background: rgba(0, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 5px 15px rgba(0, 255, 255, 0.4),
+    0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+.nav-item:hover .nav-glow {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 5px #00ffff);
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover .nav-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px #00ffff);
+}
+
+.nav-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 5px #00ffff;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover .nav-label {
+  text-shadow: 0 0 10px #00ffff;
+  color: #ffffff;
+}
+
+.nav-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Active state */
+.nav-item.active {
+  background: rgba(0, 255, 255, 0.3);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.5),
+    inset 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.nav-item.active .nav-label {
+  color: #ffffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cyber-navigation {
+    top: 30px;
+  }
+  
+  .nav-bar {
+    gap: 3px;
+    padding: 8px;
+  }
+  
+  .nav-item {
+    padding: 10px 12px;
+    min-width: 60px;
+  }
+  
+  .nav-icon {
+    font-size: 1.2rem;
+  }
+  
+  .nav-label {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-item {
+    min-width: 50px;
+    padding: 8px 10px;
+  }
+  
+  .nav-label {
+    font-size: 0.6rem;
+  }
+} 
