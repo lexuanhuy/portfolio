@@ -1,5 +1,5 @@
-import ContactSection from '@sections/ContactSection';
-import BackToHome from '@ui/BackToHome';
+import ContactSection from "@sections/ContactSection";
+import BackToHome from "@ui/BackToHome";
 
 export default function Contact() {
   return (
@@ -8,4 +8,4 @@ export default function Contact() {
       <ContactSection />
     </div>
   );
-} 
+}

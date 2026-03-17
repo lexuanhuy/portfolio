@@ -15,7 +15,12 @@ export default function ProjectCard({ project }) {
               </a>
             )}
             {githubUrl && (
-              <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link"
+              >
                 GitHub
               </a>
             )}
@@ -35,4 +40,4 @@ export default function ProjectCard({ project }) {
       </div>
     </div>
   );
-} 
+}

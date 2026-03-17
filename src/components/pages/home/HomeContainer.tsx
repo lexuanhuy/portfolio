@@ -19,8 +19,8 @@ const HomeContainer = memo(() => {
         <h1 className="cyber-title">LÊ XUÂN HUY</h1>
         <p className="cyber-subtitle">Full-Stuck Developer</p>
         <p className="cyber-subtitle max-w-4xl">
-          Là người vừa kẹt ở frontend, vừa kẹt ở backend, vừa không biết deploy,
-          vừa quên mất cách dùng Git 😅
+          Là người vừa kẹt ở frontend, vừa kẹt ở backend, vừa không biết deploy, vừa quên mất cách
+          dùng Git 😅
         </p>
       </div>
     </div>

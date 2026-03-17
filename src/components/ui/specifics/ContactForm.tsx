@@ -6,37 +6,37 @@ export default function ContactForm() {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     // Here you would typically send the data to your backend
     console.log("Form submitted:", formData);
-    
+
     // Reset form
     setFormData({
       name: "",
       email: "",
       subject: "",
-      message: ""
+      message: "",
     });
-    
+
     setIsSubmitting(false);
     alert("Cảm ơn bạn đã gửi tin nhắn! Tôi sẽ phản hồi sớm nhất có thể.");
   };
@@ -55,7 +55,7 @@ export default function ContactForm() {
           placeholder="Nhập họ và tên của bạn"
         />
       </div>
-      
+
       <div className="form-group">
         <label htmlFor="email">Email</label>
         <input
@@ -68,7 +68,7 @@ export default function ContactForm() {
           placeholder="your.email@example.com"
         />
       </div>
-      
+
       <div className="form-group">
         <label htmlFor="subject">Tiêu Đề</label>
         <input
@@ -81,7 +81,7 @@ export default function ContactForm() {
           placeholder="Tiêu đề tin nhắn"
         />
       </div>
-      
+
       <div className="form-group">
         <label htmlFor="message">Nội Dung</label>
         <textarea
@@ -94,14 +94,10 @@ export default function ContactForm() {
           placeholder="Nhập nội dung tin nhắn..."
         />
       </div>
-      
-      <button 
-        type="submit" 
-        className="submit-btn"
-        disabled={isSubmitting}
-      >
+
+      <button type="submit" className="submit-btn" disabled={isSubmitting}>
         {isSubmitting ? "Đang gửi..." : "Gửi Tin Nhắn"}
       </button>
     </form>
   );
-} 
+}

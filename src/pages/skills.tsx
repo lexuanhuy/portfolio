@@ -1,5 +1,5 @@
-import SkillsSection from '@sections/SkillsSection';
-import BackToHome from '@ui/BackToHome';
+import SkillsSection from "@sections/SkillsSection";
+import BackToHome from "@ui/BackToHome";
 
 export default function Skills() {
   return (
@@ -8,4 +8,4 @@ export default function Skills() {
       <SkillsSection />
     </div>
   );
-} 
+}

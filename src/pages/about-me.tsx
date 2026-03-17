@@ -21,7 +21,7 @@ const AboutMe = memo(() => {
       { text: "Đang review code", icon: "👀", animation: "reviewing" },
       { text: "Đang họp", icon: "🤝", animation: "meeting" },
     ],
-    []
+    [],
   );
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const AboutMe = memo(() => {
       experience: "3+ years",
       specializations: ["Frontend", "Backend", "AI Prompting", "???"],
     }),
-    [currentStatus, statusList]
+    [currentStatus, statusList],
   );
 
   const timeline = useMemo(
@@ -111,10 +111,8 @@ const AboutMe = memo(() => {
 
       {
         year: "2022",
-        title:
-          "Thiên hạ thay đổi, tái xuất giang hồ (Senior Frontend Developer tại NeoX)",
-        description:
-          "Xây dựng FE cho hệ thống thanh toán và quản lý thanh toán",
+        title: "Thiên hạ thay đổi, tái xuất giang hồ (Senior Frontend Developer tại NeoX)",
+        description: "Xây dựng FE cho hệ thống thanh toán và quản lý thanh toán",
         tech: ["React", "Node.js", "Ant Design", "UmiJS"],
         status: "completed",
       },
@@ -125,27 +123,19 @@ const AboutMe = memo(() => {
           "Thời loạn thế, tài nguyên khan hiếm, nguyện cùng bằng hữu đồng hành, vượt qua kiếp nạn (Senior Frontend Developer tại Wafeflex)",
         description:
           "Xây dựng hệ thống quản lý như TMS, WMS, OMS và ứng dụng khác như Marketplace, Marketing website, ...",
-        tech: [
-          "React",
-          "Next.js",
-          "Node.js",
-          "Tailwind CSS",
-          "Framer Motion",
-          "Ant Design",
-        ],
+        tech: ["React", "Next.js", "Node.js", "Tailwind CSS", "Framer Motion", "Ant Design"],
         status: "completed",
       },
       {
         year: "2025",
         title:
           "Lòng người khó đoán, cất bước một mình, chẳng cầu kẻ đồng tâm nữa (Prompt Engineering tại Gatlas)",
-        description:
-          "Thay vì viết code thì tôi viết prompt còn code thì để AI viết",
+        description: "Thay vì viết code thì tôi viết prompt còn code thì để AI viết",
         tech: ["Python", "React", "Node.js", "Prompt Engineering", "AI"],
         status: "active",
       },
     ],
-    []
+    [],
   );
 
   const stats = useMemo(
@@ -155,7 +145,7 @@ const AboutMe = memo(() => {
       { label: "Cà Phê Uống", value: "999+", icon: "☕" },
       { label: "Bug Đã Fix", value: "∞", icon: "🐛" },
     ],
-    []
+    [],
   );
 
   // const interests = useMemo(
@@ -176,7 +166,7 @@ const AboutMe = memo(() => {
         {spec}
       </span>
     ),
-    []
+    [],
   );
 
   const renderStat = useCallback(
@@ -187,15 +177,12 @@ const AboutMe = memo(() => {
         <div className="stat-label">{stat.label}</div>
       </div>
     ),
-    []
+    [],
   );
 
   const renderTimelineItem = useCallback(
     (item, index) => (
-      <div
-        key={`${item.year}-${index}`}
-        className={`timeline-item ${item.status}`}
-      >
+      <div key={`${item.year}-${index}`} className={`timeline-item ${item.status}`}>
         <div className="timeline-marker"></div>
         <div className="timeline-content">
           <div className="timeline-year">{item.year}</div>
@@ -211,7 +198,7 @@ const AboutMe = memo(() => {
         </div>
       </div>
     ),
-    []
+    [],
   );
 
   // const renderInterest = useCallback(
@@ -236,7 +223,9 @@ const AboutMe = memo(() => {
           <div className="profile-card">
             <div className="profile-avatar">
               <div className="avatar-frame">
-                <div className="avatar-placeholder overflow-hidden"><img alt="avatar" src={AvatarImg} /></div>
+                <div className="avatar-placeholder overflow-hidden">
+                  <img alt="avatar" src={AvatarImg} />
+                </div>
                 <div className="avatar-status"></div>
               </div>
             </div>
@@ -250,9 +239,7 @@ const AboutMe = memo(() => {
                 </span>
                 <span className="detail-item">
                   <span className="detail-label">STATUS:</span>
-                  <span
-                    className={`detail-value status-${personalInfo.statusAnimation}`}
-                  >
+                  <span className={`detail-value status-${personalInfo.statusAnimation}`}>
                     {personalInfo.statusIcon} {personalInfo.status}
                   </span>
                 </span>
@@ -280,9 +267,7 @@ const AboutMe = memo(() => {
         {/* Timeline Section */}
         <div className="timeline-section">
           <h2 className="section-title">Hành Trình</h2>
-          <div className="timeline">
-            {timeline.map(renderTimelineItem)}
-          </div>
+          <div className="timeline">{timeline.map(renderTimelineItem)}</div>
         </div>
 
         {/* Interests Section */}
@@ -301,21 +286,17 @@ const AboutMe = memo(() => {
           <h2 className="section-title">Triết Lý</h2>
           <div className="philosophy-content">
             <div className="philosophy-quote">
-              "Nếu code chạy được thì đừng sửa! Nếu không chạy được thì... uống
-              cà phê và thử lại! ☕"
+              "Nếu code chạy được thì đừng sửa! Nếu không chạy được thì... uống cà phê và thử lại!
+              ☕"
             </div>
             <div className="philosophy-principles">
               <div className="principle">
                 <span className="principle-icon">🥖</span>
-                <span className="principle-text">
-                  Bánh mì + cà phê = năng lượng code cả ngày
-                </span>
+                <span className="principle-text">Bánh mì + cà phê = năng lượng code cả ngày</span>
               </div>
               <div className="principle">
                 <span className="principle-icon">😴</span>
-                <span className="principle-text">
-                  8 tiếng mơ về bug, 16 tiếng fix bug thật
-                </span>
+                <span className="principle-text">8 tiếng mơ về bug, 16 tiếng fix bug thật</span>
               </div>
               <div className="principle">
                 <span className="principle-icon">💻</span>

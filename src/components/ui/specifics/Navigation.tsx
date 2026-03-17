@@ -12,8 +12,8 @@ export default function Navigation() {
 
       // Determine active section based on scroll position
       const sections = ["home", "projects", "skills", "contact"];
-      const sectionElements = sections.map(id => document.getElementById(id));
-      
+      const sectionElements = sections.map((id) => document.getElementById(id));
+
       for (let i = sections.length - 1; i >= 0; i--) {
         const element = sectionElements[i];
         if (element && element.offsetTop <= scrollPosition + 200) {
@@ -38,7 +38,7 @@ export default function Navigation() {
     { id: "home", label: "Home" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
-    { id: "contact", label: "Contact" }
+    { id: "contact", label: "Contact" },
   ];
 
   return (
@@ -47,9 +47,9 @@ export default function Navigation() {
         <div className="nav-logo">
           <span className="logo-text">Portfolio</span>
         </div>
-        
+
         <ul className="nav-menu">
-          {navItems.map(item => (
+          {navItems.map((item) => (
             <li key={item.id} className="nav-item">
               <button
                 className={`nav-link ${activeSection === item.id ? "active" : ""}`}
@@ -63,4 +63,4 @@ export default function Navigation() {
       </div>
     </nav>
   );
-} 
+}

@@ -27,27 +27,21 @@ const HeroSection = memo(() => {
             </h1>
             <h2 className="hero-subtitle">Full Stack Developer</h2>
             <p className="hero-description">
-              I create beautiful, functional, and user-centered digital experiences. 
-              With a passion for clean code and innovative solutions, I bring ideas to life 
-              through modern web technologies.
+              I create beautiful, functional, and user-centered digital experiences. With a passion
+              for clean code and innovative solutions, I bring ideas to life through modern web
+              technologies.
             </p>
-            
+
             <div className="hero-buttons">
-              <button 
-                className="btn btn-primary"
-                onClick={handleViewWork}
-              >
+              <button className="btn btn-primary" onClick={handleViewWork}>
                 View My Work
               </button>
-              <button 
-                className="btn btn-secondary"
-                onClick={handleGetInTouch}
-              >
+              <button className="btn btn-secondary" onClick={handleGetInTouch}>
                 Get In Touch
               </button>
             </div>
           </div>
-          
+
           <div className="hero-stats">
             <div className="stat-item">
               <span className="stat-number">3+</span>
@@ -63,7 +57,7 @@ const HeroSection = memo(() => {
             </div>
           </div>
         </div>
-        
+
         <div className="scroll-indicator">
           <div className="scroll-arrow"></div>
           <span className="scroll-text">Scroll to explore</span>
@@ -75,4 +69,4 @@ const HeroSection = memo(() => {
 
 HeroSection.displayName = "HeroSection";
 
-export default HeroSection; 
+export default HeroSection;

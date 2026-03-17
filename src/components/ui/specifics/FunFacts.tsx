@@ -9,43 +9,43 @@ export default function FunFacts() {
     {
       text: "Debugging: Quá trình loại bỏ bug và tạo ra bug mới",
       emoji: "🐛",
-      category: "Debug"
+      category: "Debug",
     },
     {
       text: "Code không chạy? Uống cà phê và thử lại!",
       emoji: "☕",
-      category: "Life Hack"
+      category: "Life Hack",
     },
     {
       text: "99% lỗi là do lỗi người dùng. 1% còn lại là do tôi",
       emoji: "😅",
-      category: "Truth"
+      category: "Truth",
     },
     {
       text: "Git commit message: 'Fix stuff' - Có ai hiểu không?",
       emoji: "📝",
-      category: "Git"
+      category: "Git",
     },
     {
       text: "Stack Overflow: Nơi copy-paste trở thành nghệ thuật",
       emoji: "📋",
-      category: "Development"
+      category: "Development",
     },
     {
       text: "Code review: 'Tại sao bạn làm thế này?' - 'Vì nó chạy được'",
       emoji: "🤷‍♂️",
-      category: "Code Review"
+      category: "Code Review",
     },
     {
       text: "Documentation: Viết cho người khác đọc, không phải cho mình",
       emoji: "📚",
-      category: "Best Practice"
+      category: "Best Practice",
     },
     {
       text: "Testing: Tìm bug trước khi khách hàng tìm thấy",
       emoji: "🧪",
-      category: "Testing"
-    }
+      category: "Testing",
+    },
   ];
 
   useEffect(() => {
@@ -82,25 +82,25 @@ export default function FunFacts() {
         <h3 className="fun-facts-title">Vài thứ thú vị tôi copy lại</h3>
         {/* <p className="fun-facts-subtitle">Những điều thú vị về cuộc sống lập trình viên</p> */}
       </div>
-      
+
       <div className="fact-display">
-        <div className={`fact-card ${isAnimating ? 'animating' : ''}`}>
+        <div className={`fact-card ${isAnimating ? "animating" : ""}`}>
           <div className="fact-emoji">{funFacts[currentFact].emoji}</div>
           <div className="fact-content">
             <p className="fact-text">{funFacts[currentFact].text}</p>
             <span className="fact-category">{funFacts[currentFact].category}</span>
           </div>
         </div>
-        
+
         <div className="fact-navigation">
           <button className="nav-btn prev-btn" onClick={handlePrev}>
             ←
           </button>
           <div className="fact-indicators">
             {funFacts.map((_, index) => (
-              <span 
-                key={index} 
-                className={`indicator ${index === currentFact ? 'active' : ''}`}
+              <span
+                key={index}
+                className={`indicator ${index === currentFact ? "active" : ""}`}
                 onClick={() => setCurrentFact(index)}
               />
             ))}
@@ -110,13 +110,13 @@ export default function FunFacts() {
           </button>
         </div>
       </div>
-      
+
       <div className="fun-facts-footer">
         <p className="footer-text">
-          "Lập trình viên giỏi nhất là người biết copy-paste từ mọi nơi" 
+          "Lập trình viên giỏi nhất là người biết copy-paste từ mọi nơi"
           <span className="footer-emoji">😄</span>
         </p>
       </div>
     </div>
   );
-} 
+}

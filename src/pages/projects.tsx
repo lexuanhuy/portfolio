@@ -1,5 +1,5 @@
-import ProjectsSection from '@sections/ProjectsSection';
-import BackToHome from '@ui/BackToHome';
+import ProjectsSection from "@sections/ProjectsSection";
+import BackToHome from "@ui/BackToHome";
 
 export default function Projects() {
   return (
@@ -8,4 +8,4 @@ export default function Projects() {
       <ProjectsSection />
     </div>
   );
-} 
+}

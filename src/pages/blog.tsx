@@ -1,4 +1,4 @@
-import BackToHome from '@ui/BackToHome';
+import BackToHome from "@ui/BackToHome";
 
 export default function Blog() {
   return (
@@ -14,8 +14,10 @@ export default function Blog() {
           <li>🎮 Chơi game để lấy cảm hứng</li>
           <li>😴 Ngủ một giấc và hy vọng sáng mai có ý tưởng</li>
         </ul>
-        <p><em>P.S: Blog sẽ ra mắt khi tôi hoàn thành việc... procrastinate 😂</em></p>
+        <p>
+          <em>P.S: Blog sẽ ra mắt khi tôi hoàn thành việc... procrastinate 😂</em>
+        </p>
       </div>
     </div>
   );
-} 
+}
