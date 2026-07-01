@@ -36,7 +36,7 @@ jobs:
         run: pnpm add @notionhq/client
 
       - name: Fetch Notion Data
-        run: node ../scripts/fetch-notion.js
+        run: node scripts/fetch-notion.js
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
