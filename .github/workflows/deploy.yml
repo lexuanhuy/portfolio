@@ -24,7 +24,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Sửa lỗi chính tả từ node-node thành node-version
+          node-version: 24
           cache: 'pnpm'
 
       - name: Install dependencies
