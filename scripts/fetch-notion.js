@@ -46,7 +46,7 @@ const handlePage = async (cleanData) => {
 
     await Promise.all(
         pageIds.map(async (pageID) => {
-            const markdown = await getPage(pageID);
+            const response = await getPage(pageID);
 
             let allMarkdown = response.markdown;
 
