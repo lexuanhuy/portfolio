@@ -1,6 +1,7 @@
 import { Client } from "@notionhq/client"
 import fs from "fs"
 import dotenv from "dotenv";
+import path from "path";
 dotenv.config();
 
 const dir = '../public/data';
