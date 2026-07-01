@@ -4,8 +4,8 @@ import dotenv from "dotenv";
 import path from "path";
 dotenv.config();
 
-const dir = '../public/data';
-const filePath = '../public/data/blogs.json';
+const dir = '../public';
+const filePath = '../public/blogs.json';
 
 // Initializing a client
 const notion = new Client({
