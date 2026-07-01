@@ -3,8 +3,8 @@ import fs from "fs"
 import dotenv from "dotenv";
 dotenv.config();
 
-const dir = '../../public/data';
-const filePath = '../../public/data/blogs.json';
+const dir = '../public/data';
+const filePath = '../public/data/blogs.json';
 
 // Initializing a client
 const notion = new Client({
