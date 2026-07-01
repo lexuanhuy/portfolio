@@ -33,13 +33,13 @@ jobs:
       # --- BƯỚC MỚI: FETCH DATA ---
       # Cài riêng gói @notionhq/client để script chạy được
       - name: Install Notion SDK
-        run: pnpm add @notionhq/client dontenv
+        run: pnpm add @notionhq/client dotenv
 
       - name: Fetch Notion Data
         run: node scripts/fetch-notion.js
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          DATABASE_ID: ${{ secrets.DATABASE_ID }}
+          NOTION_BLOGS_ID: ${{ secrets.NOTION_BLOGS_ID }}
       # ---------------------------
 
       - name: Lint
