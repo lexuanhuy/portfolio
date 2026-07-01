@@ -34,6 +34,12 @@ const writeJsonFile = (targetPath, data) => {
     fs.writeFileSync(targetPath, JSON.stringify(data, null, 2));
 }
 
+const getPage = async (pageID) => {
+    return await notion.pages.retrieveMarkdown({
+        page_id: pageID,
+    });
+}
+
 const handlePage = async (cleanData) => {
     const blogDir = path.join(dir, "blogs");
     const pageIds = cleanData.map((page) => page.id);
