@@ -22,3 +22,16 @@ export interface Skill {
   level: number; // 0-100
   category: string;
 }
+
+export interface BlogCategory {
+  id: string;
+  name: string;
+  color: string;
+}
+
+export interface BlogItem {
+  id: string;
+  title: string;
+  description: string;
+  categories: BlogCategory[];
+}

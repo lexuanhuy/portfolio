@@ -4,7 +4,9 @@
   border-radius: 12px;
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -22,6 +24,7 @@
 .skill-emoji {
   font-size: 2rem;
   display: block;
+  color: white;
 }
 
 .skill-content {
@@ -32,7 +35,7 @@
   font-size: 1.1rem;
   font-weight: 600;
   color: white;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
 }
 
 .skill-level {
@@ -71,4 +74,4 @@
   border-radius: 12px;
   font-size: 12px;
   font-weight: 500;
-} 
+}

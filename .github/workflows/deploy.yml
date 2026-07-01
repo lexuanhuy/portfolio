@@ -26,11 +26,23 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-node: 20
+          node-version: 20 # Sửa lỗi chính tả từ node-node thành node-version
           cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install
+
+      # --- BƯỚC MỚI: FETCH DATA ---
+      # Cài riêng gói @notionhq/client để script chạy được
+      - name: Install Notion SDK
+        run: pnpm add @notionhq/client
+
+      - name: Fetch Notion Data
+        run: node scripts/fetch-notion.js
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          DATABASE_ID: ${{ secrets.DATABASE_ID }}
+      # ---------------------------
 
       - name: Lint
         run: pnpm run lint
@@ -44,7 +56,6 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          # this should match the `outDir` in your vite.config.ts
           path: './dist'
 
   deploy:

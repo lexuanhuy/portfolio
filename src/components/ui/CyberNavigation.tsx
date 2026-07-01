@@ -46,7 +46,7 @@ export default function CyberNavigation() {
               to={item.path}
               className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
             >
-              <div className="nav-icon">{item.icon}</div>
+              {/* <div className="nav-icon">{item.icon}</div> */}
               <span className="nav-label">{item.label}</span>
               <div className="nav-glow"></div>
             </NavLink>

@@ -7,6 +7,7 @@ const Skills = lazy(() => import("@pages/skills"));
 const Projects = lazy(() => import("@pages/projects"));
 const Blog = lazy(() => import("@pages/blog"));
 const Contact = lazy(() => import("@pages/contact"));
+const BlogDetail = lazy(() => import("@pages/blog-detail"));
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blogs/:id" element={<BlogDetail />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Suspense>

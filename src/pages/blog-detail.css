@@ -1,0 +1,288 @@
+/* Blog Detail Page Cyberpunk Styles */
+.blog-detail-container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 120px 20px 60px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Back navigation */
+.blog-detail-nav {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.back-to-blog {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ff00ff;
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 0, 255, 0.3);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.back-to-blog:hover {
+  color: #ffffff;
+  border-color: #ff00ff;
+  box-shadow:
+    0 0 15px rgba(255, 0, 255, 0.3),
+    inset 0 0 10px rgba(255, 0, 255, 0.2);
+  transform: translateX(-3px);
+}
+
+.back-to-blog .back-arrow {
+  transition: transform 0.2s ease;
+}
+
+.back-to-blog:hover .back-arrow {
+  transform: translateX(-4px);
+}
+
+.back-to-blog .back-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 255, 0.1), transparent);
+  left: -100%;
+  transition: all 0.5s ease;
+}
+
+.back-to-blog:hover .back-glow {
+  left: 100%;
+}
+
+/* Header style */
+.blog-detail-header {
+  /* border-bottom: 2px solid rgba(0, 255, 255, 0.3); */
+  /* padding-bottom: 30px; */
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* .blog-detail-header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: #ff00ff;
+  box-shadow: 0 0 8px #ff00ff;
+} */
+
+.blog-detail-title {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #00ffff;
+  margin: 0 0 20px 0;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+  line-height: 1.25;
+}
+
+.blog-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.blog-detail-id {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  color: rgba(0, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 8px;
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+.blog-detail-categories {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Content wrapper */
+.blog-detail-content-wrapper {
+  background: rgba(10, 10, 25, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgba(0, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-detail-content-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+}
+
+/* Markdown Content Styling */
+.blog-detail-content {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Courier New", Courier, monospace;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.blog-detail-content h1,
+.blog-detail-content h2,
+.blog-detail-content h3,
+.blog-detail-content h4 {
+  font-family: "Courier New", Courier, monospace;
+  color: #00ffff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.blog-detail-content h1 {
+  font-size: 1.8rem;
+  border-left: 3px solid #ff00ff;
+  padding-left: 15px;
+}
+
+.blog-detail-content h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px dashed rgba(0, 255, 255, 0.2);
+  padding-bottom: 5px;
+}
+
+.blog-detail-content h3 {
+  font-size: 1.25rem;
+}
+
+.blog-detail-content p {
+  margin-bottom: 1.5rem;
+}
+
+.blog-detail-content a {
+  color: #ff00ff;
+  text-decoration: underline;
+  transition: text-shadow 0.2s ease;
+}
+
+.blog-detail-content a:hover {
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
+}
+
+.blog-detail-content ul,
+.blog-detail-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 25px;
+}
+
+.blog-detail-content ul {
+  list-style: none;
+}
+
+.blog-detail-content ul li {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.blog-detail-content ul li::before {
+  content: ">";
+  position: absolute;
+  left: -15px;
+  color: #ff00ff;
+  font-weight: bold;
+}
+
+.blog-detail-content ol li {
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.blog-detail-content blockquote {
+  border-left: 4px solid #ff00ff;
+  background: rgba(255, 0, 255, 0.05);
+  margin: 1.5rem 0;
+  padding: 15px 20px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.blog-detail-content code {
+  font-family: "Courier New", Courier, monospace;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  color: #00ff66;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.blog-detail-content pre {
+  background: rgba(5, 5, 15, 0.9);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.blog-detail-content pre code {
+  background: transparent;
+  border: none;
+  color: #00ff66;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.9rem;
+  display: block;
+}
+
+/* System Report Footer */
+.blog-detail-footer {
+  margin-top: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blog-detail-container {
+    padding: 100px 15px 40px;
+  }
+
+  .blog-detail-title {
+    font-size: 1.8rem;
+  }
+
+  .blog-detail-content-wrapper {
+    padding: 20px;
+  }
+
+  .blog-detail-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .blog-detail-content h2 {
+    font-size: 1.3rem;
+  }
+}
