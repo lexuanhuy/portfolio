@@ -59,7 +59,7 @@ jobs:
       - name: Debug - Check contents of dist
         run: |
           echo "Kiểm tra thư mục dist sau khi build:"
-          ls -R ../dist
+          ls -R ./dist
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
