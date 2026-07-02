@@ -40,6 +40,11 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_BLOGS_ID: ${{ secrets.NOTION_BLOGS_ID }}
+
+      - name: Debug - List all files
+        run: |
+          echo "Kiểm tra thư mục public:"
+          ls -R ../public
       # ---------------------------
 
       - name: Lint
