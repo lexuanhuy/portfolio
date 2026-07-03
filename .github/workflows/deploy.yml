@@ -30,8 +30,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      # --- BƯỚC MỚI: FETCH DATA ---
-      # Cài riêng gói @notionhq/client để script chạy được
+      # --- FETCH DATA ---
+      # Cài riêng gói @notionhq/client và dotenv để script chạy được
       - name: Install Notion SDK
         run: pnpm add @notionhq/client dotenv
 

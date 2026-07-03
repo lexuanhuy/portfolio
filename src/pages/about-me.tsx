@@ -3,6 +3,14 @@ import BackToHome from "@ui/BackToHome";
 import AvatarImg from "@/assets/images/avatar.jpg";
 import "./about-me.css";
 
+type TimelineItem = {
+  year: string;
+  title: string;
+  description: string;
+  tech: string[];
+  status: string;
+};
+
 const AboutMe = memo(() => {
   const [currentStatus, setCurrentStatus] = useState(0);
 
@@ -35,43 +43,132 @@ const AboutMe = memo(() => {
   const personalInfo = useMemo(
     () => ({
       name: "Lê Xuân Huy",
-      alias: "Bug Hunter 🐛",
+      alias: "Developer",
       location: "Debug Dungeon 🏰",
       status: statusList[currentStatus].text,
       statusIcon: statusList[currentStatus].icon,
       statusAnimation: statusList[currentStatus].animation,
       level: "31",
       experience: "3+ years",
-      specializations: ["Frontend", "Backend", "AI Prompting", "???"],
+      specializations: ["Javascript", "Typescript", "ReactJS", "NextJS", "NodeJS", "ExpressJS"],
     }),
     [currentStatus, statusList],
   );
+
+  // const timeline = useMemo(
+  //   () => [
+  //     {
+  //       year: "2015",
+  //       title: "Vừa ra khỏi tân thủ thôn - Bắt đầu luyện cấp",
+  //       description:
+  //         "Bắt đầu hành trình lập trình với HTML, CSS, JavaScript, PHP. Đập vào mặt là custom lại 1 hệ thống WHMCS to bự, làm mới website công ty và nhiều website khách hàng",
+  //       tech: ["HTML", "CSS", "JavaScript", "PHP"],
+  //       status: "completed",
+  //     },
+  //     {
+  //       year: "2017",
+  //       title: "Phiêu bạc giang hồ không môn không phái (Freelancer)",
+  //       description:
+  //         "Làm freelancer kiểu 'có gì làm nấy', từ website bán hàng đến hệ thống quản lý gì đó. Khách hàng hỏi gì cũng 'OK, em làm được' 😅",
+  //       tech: ["HTML", "CSS", "JavaScript", "PHP"],
+  //       status: "completed",
+  //     },
+
+  //     {
+  //       year: "2018",
+  //       title:
+  //         "Gian hồ hiểm ác, tài không bằng người nên gia nhập thế lực lớn (Full-Stack Developer tại AI Pacific)",
+  //       description:
+  //         "Xây dựng hệ thống quản lý nhân sự, quản lý hồ sơ bệnh án, quản lý người nuôi bệnh, xử lý dữ liệu từ excel cho hệ thống mới, xậy dựng hệ thống report realtime, xậy dựng hệ thống lịch làm việc và chấm công. Trong thời gian này cái gì cũng biết nhưng thật ra không biết gì cả 😅",
+  //       tech: [
+  //         "DevOps",
+  //         "Git",
+  //         "React Native",
+  //         "PHP",
+  //         "React",
+  //         "MySQL",
+  //         "AngularJS",
+  //         "C#",
+  //         "Excel",
+  //         "Socket.io",
+  //         "Sails.js",
+  //         "Node.js",
+  //       ],
+  //       status: "completed",
+  //     },
+
+  //     {
+  //       year: "2020",
+  //       title:
+  //         "Thế lực tranh đấu, lòng người hoang mang nên gia nhập thế lực khác (Full-Stack Developer tại BOO)",
+  //       description:
+  //         "Xây dựng hệ thống thương mại điện tử và ứng dụng quản lý tích hợp ERP, thanh toán từ bên thứ 3",
+  //       tech: ["Vue.js", "PHP", "MySQL"],
+  //       status: "completed",
+  //     },
+
+  //     {
+  //       year: "2021",
+  //       title:
+  //         "Bệnh dịch khắp nơi, dân chúng lầm than, tôi đóng cửa bế quan không ra ngoài (Crypto)",
+  //       description:
+  //         "Tình hình Covid khó khăn, nằm trong vùng đỏ cách ly, nên tôi quyết định dấn thân vào thị trường crypto. Từ đó tôi đã từng làm 1 dự án về crypto, nhưng vì tôi không biết làm gì với nó nên tôi đã bỏ dự án đó",
+  //       tech: ["Crypto", "Blockchain", "Smart Contract", "Web3"],
+  //       status: "completed",
+  //     },
+
+  //     {
+  //       year: "2022",
+  //       title: "Thiên hạ thay đổi, tái xuất giang hồ (Senior Frontend Developer tại NeoX)",
+  //       description: "Xây dựng FE cho hệ thống thanh toán và quản lý thanh toán",
+  //       tech: ["React", "Node.js", "Ant Design", "UmiJS"],
+  //       status: "completed",
+  //     },
+
+  //     {
+  //       year: "2023",
+  //       title:
+  //         "Thời loạn thế, tài nguyên khan hiếm, nguyện cùng bằng hữu đồng hành, vượt qua kiếp nạn (Senior Frontend Developer tại Wafeflex)",
+  //       description:
+  //         "Xây dựng hệ thống quản lý như TMS, WMS, OMS và ứng dụng khác như Marketplace, Marketing website, ...",
+  //       tech: ["React", "Next.js", "Node.js", "Tailwind CSS", "Framer Motion", "Ant Design"],
+  //       status: "completed",
+  //     },
+  //     {
+  //       year: "2025",
+  //       title:
+  //         "Lòng người khó đoán, cất bước một mình, chẳng cầu kẻ đồng tâm nữa (Prompt Engineering tại Gatlas)",
+  //       description: "Thay vì viết code thì tôi viết prompt còn code thì để AI viết",
+  //       tech: ["Python", "React", "Node.js", "Prompt Engineering", "AI"],
+  //       status: "active",
+  //     },
+  //   ],
+  //   [],
+  // );
 
   const timeline = useMemo(
     () => [
       {
         year: "2015",
-        title: "Vừa ra khỏi tân thủ thôn - Bắt đầu luyện cấp",
+        title: "Junior Web Developer",
         description:
-          "Bắt đầu hành trình lập trình với HTML, CSS, JavaScript, PHP. Đập vào mặt là custom lại 1 hệ thống WHMCS to bự, làm mới website công ty và nhiều website khách hàng",
+          "Custom lại 1 hệ thống WHMCS, làm mới website công ty và oursouce website khách hàng",
         tech: ["HTML", "CSS", "JavaScript", "PHP"],
         status: "completed",
       },
       {
         year: "2017",
-        title: "Phiêu bạc giang hồ không môn không phái (Freelancer)",
-        description:
-          "Làm freelancer kiểu 'có gì làm nấy', từ website bán hàng đến hệ thống quản lý gì đó. Khách hàng hỏi gì cũng 'OK, em làm được' 😅",
+        title: "Freelancer",
+        description: "Làm website giới thiệu công cty, doanh nghiệp, bán hàng, ...",
         tech: ["HTML", "CSS", "JavaScript", "PHP"],
         status: "completed",
       },
 
       {
         year: "2018",
-        title:
-          "Gian hồ hiểm ác, tài không bằng người nên gia nhập thế lực lớn (Full-Stack Developer tại AI Pacific)",
+        title: "Fullstack Developer",
         description:
-          "Xây dựng hệ thống quản lý nhân sự, quản lý hồ sơ bệnh án, quản lý người nuôi bệnh, xử lý dữ liệu từ excel cho hệ thống mới, xậy dựng hệ thống report realtime, xậy dựng hệ thống lịch làm việc và chấm công. Trong thời gian này cái gì cũng biết nhưng thật ra không biết gì cả 😅",
+          "Xây dựng hệ thống quản lý nhân sự, quản lý hồ sơ bệnh án, quản lý người nuôi bệnh, xử lý dữ liệu từ excel cho hệ thống mới, xậy dựng hệ thống report realtime, xậy dựng hệ thống lịch làm việc và chấm công.",
         tech: [
           "DevOps",
           "Git",
@@ -91,8 +188,7 @@ const AboutMe = memo(() => {
 
       {
         year: "2020",
-        title:
-          "Thế lực tranh đấu, lòng người hoang mang nên gia nhập thế lực khác (Full-Stack Developer tại BOO)",
+        title: "Fullstack Developer",
         description:
           "Xây dựng hệ thống thương mại điện tử và ứng dụng quản lý tích hợp ERP, thanh toán từ bên thứ 3",
         tech: ["Vue.js", "PHP", "MySQL"],
@@ -100,18 +196,8 @@ const AboutMe = memo(() => {
       },
 
       {
-        year: "2021",
-        title:
-          "Bệnh dịch khắp nơi, dân chúng lầm than, tôi đóng cửa bế quan không ra ngoài (Crypto)",
-        description:
-          "Tình hình Covid khó khăn, nằm trong vùng đỏ cách ly, nên tôi quyết định dấn thân vào thị trường crypto. Từ đó tôi đã từng làm 1 dự án về crypto, nhưng vì tôi không biết làm gì với nó nên tôi đã bỏ dự án đó",
-        tech: ["Crypto", "Blockchain", "Smart Contract", "Web3"],
-        status: "completed",
-      },
-
-      {
         year: "2022",
-        title: "Thiên hạ thay đổi, tái xuất giang hồ (Senior Frontend Developer tại NeoX)",
+        title: "Senior Frontend Developer",
         description: "Xây dựng FE cho hệ thống thanh toán và quản lý thanh toán",
         tech: ["React", "Node.js", "Ant Design", "UmiJS"],
         status: "completed",
@@ -119,8 +205,7 @@ const AboutMe = memo(() => {
 
       {
         year: "2023",
-        title:
-          "Thời loạn thế, tài nguyên khan hiếm, nguyện cùng bằng hữu đồng hành, vượt qua kiếp nạn (Senior Frontend Developer tại Wafeflex)",
+        title: "Senior Frontend Developer / Technical Lead Frontend",
         description:
           "Xây dựng hệ thống quản lý như TMS, WMS, OMS và ứng dụng khác như Marketplace, Marketing website, ...",
         tech: ["React", "Next.js", "Node.js", "Tailwind CSS", "Framer Motion", "Ant Design"],
@@ -128,8 +213,7 @@ const AboutMe = memo(() => {
       },
       {
         year: "2025",
-        title:
-          "Lòng người khó đoán, cất bước một mình, chẳng cầu kẻ đồng tâm nữa (Prompt Engineering tại Gatlas)",
+        title: "Senior Frontend Developer",
         description: "Thay vì viết code thì tôi viết prompt còn code thì để AI viết",
         tech: ["Python", "React", "Node.js", "Prompt Engineering", "AI"],
         status: "active",
@@ -137,7 +221,6 @@ const AboutMe = memo(() => {
     ],
     [],
   );
-
   const stats = useMemo(
     () => [
       { label: "Dự Án Hoàn Thành", value: "18+", icon: "🚀" },
@@ -161,7 +244,7 @@ const AboutMe = memo(() => {
   // );
 
   const renderSpecialization = useCallback(
-    (spec, index) => (
+    (spec: string, index: number) => (
       <span key={`${spec}-${index}`} className="specialization-tag">
         {spec}
       </span>
@@ -170,7 +253,7 @@ const AboutMe = memo(() => {
   );
 
   const renderStat = useCallback(
-    (stat, index) => (
+    (stat: { label: string; value: string; icon: string }, index: number) => (
       <div key={`${stat.label}-${index}`} className="stat-card">
         <div className="stat-icon">{stat.icon}</div>
         <div className="stat-value">{stat.value}</div>
@@ -181,7 +264,7 @@ const AboutMe = memo(() => {
   );
 
   const renderTimelineItem = useCallback(
-    (item, index) => (
+    (item: TimelineItem, index: number) => (
       <div key={`${item.year}-${index}`} className={`timeline-item ${item.status}`}>
         <div className="timeline-marker"></div>
         <div className="timeline-content">
@@ -189,7 +272,7 @@ const AboutMe = memo(() => {
           <h3 className="timeline-title">{item.title}</h3>
           <p className="timeline-description">{item.description}</p>
           <div className="timeline-tech">
-            {item.tech.map((tech, techIndex) => (
+            {item.tech.map((tech: string, techIndex: number) => (
               <span key={`${tech}-${techIndex}`} className="tech-tag">
                 {tech}
               </span>
@@ -267,7 +350,7 @@ const AboutMe = memo(() => {
         {/* Timeline Section */}
         <div className="timeline-section">
           <h2 className="section-title">Hành Trình</h2>
-          <div className="timeline">{timeline.map(renderTimelineItem)}</div>
+          <div className="timeline">{timeline.reverse().map(renderTimelineItem)}</div>
         </div>
 
         {/* Interests Section */}
@@ -283,7 +366,7 @@ const AboutMe = memo(() => {
 
         {/* Philosophy Section */}
         <div className="philosophy-section">
-          <h2 className="section-title">Triết Lý</h2>
+          {/* <h2 className="section-title">Triết Lý</h2> */}
           <div className="philosophy-content">
             <div className="philosophy-quote">
               "Nếu code chạy được thì đừng sửa! Nếu không chạy được thì... uống cà phê và thử lại!

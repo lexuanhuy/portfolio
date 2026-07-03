@@ -1,40 +1,46 @@
-import { useMemo, memo } from "react";
+import { memo } from "react";
 import FunFacts from "@/components/ui/specifics/FunFacts";
+import { MdOutlineMailOutline, MdOutlinePhoneIphone } from "react-icons/md";
+import { FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
 import "./ContactSection.css";
 
-const ContactSection = memo(() => {
-  const contactInfo = useMemo(
-    () => [
-      {
-        icon: "📧",
-        title: "Email",
-        value: "lexuanhuy1994@gmail.com",
-        link: "mailto:lexuanhuy1994@gmail.com",
-      },
-      {
-        icon: "📱",
-        title: "Điện Thoại",
-        value: "+84 977 221 643",
-        link: "tel:+84977221643",
-      },
-      {
-        icon: "📍",
-        title: "Địa Chỉ",
-        value: "139/1 Đường Dạ Nam, Phường 3, Quận 8, Thành phố Hồ Chí Minh, Việt Nam",
-        link: null,
-      },
-      {
-        icon: "💼",
-        title: "LinkedIn",
-        value: "linkedin.com/in/bamvaoday",
-        link: "https://www.linkedin.com/in/l%C3%AA-huy-8941b611a/",
-      },
-    ],
-    [],
-  );
+type ContactInfo = {
+  icon: React.ReactNode;
+  title: string;
+  value: string;
+  link: string | null;
+};
 
-  const renderContactItem = (info, index) => (
-    <div key={`${info.title}-${index}`} className="contact-info-item">
+const contactInfo: ContactInfo[] = [
+  {
+    icon: <MdOutlineMailOutline />,
+    title: "Email",
+    value: "lexuanhuy1994@gmail.com",
+    link: "mailto:lexuanhuy1994@gmail.com",
+  },
+  {
+    icon: <MdOutlinePhoneIphone />,
+    title: "Điện Thoại",
+    value: "+84 977 221 643",
+    link: "tel:+84977221643",
+  },
+  {
+    icon: <FaMapMarkerAlt />,
+    title: "Địa Chỉ",
+    value: "Thành phố Hồ Chí Minh, Việt Nam",
+    link: null,
+  },
+  {
+    icon: <FaLinkedin />,
+    title: "LinkedIn",
+    value: "https://www.linkedin.com/in/huylx/",
+    link: "https://www.linkedin.com/in/huylx/",
+  },
+];
+
+const ContactSection = memo(() => {
+  const renderContactItem = (info: ContactInfo) => (
+    <div key={`contact-${info.title}`} className="contact-info-item">
       <div className="contact-icon">{info.icon}</div>
       <div className="contact-details">
         <h4 className="contact-label">{info.title}</h4>

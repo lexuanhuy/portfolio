@@ -22,7 +22,7 @@ export default function FunFacts() {
       category: "Truth",
     },
     {
-      text: "Git commit message: 'Fix stuff' - Có ai hiểu không?",
+      text: "Git commit message: 'Fix bug' - Có ai hiểu không?",
       emoji: "📝",
       category: "Git",
     },
@@ -114,7 +114,7 @@ export default function FunFacts() {
       <div className="fun-facts-footer">
         <p className="footer-text">
           "Lập trình viên giỏi nhất là người biết copy-paste từ mọi nơi"
-          <span className="footer-emoji">😄</span>
+          <span className="footer-emoji"></span>
         </p>
       </div>
     </div>
