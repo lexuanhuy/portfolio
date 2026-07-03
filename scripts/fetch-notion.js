@@ -1,9 +1,44 @@
 import path from "path";
-import { writeJsonFile } from "./utils";
+import fs from "fs";
+import { Client } from "@notionhq/client";
+import dotenv from "dotenv";
+dotenv.config();
 
+// Initialize Notion client
+const notion = new Client({
+  auth: process.env.NOTION_TOKEN,
+});
+
+const blogDB = await notion.databases.retrieve({
+  database_id: process.env.NOTION_BLOGS_ID,
+});
+
+export const getBlogs = async () => {
+  return await notion.dataSources.query({
+    data_source_id: blogDB.data_sources[0].id,
+  });
+};
+
+export const getPage = async (pageID) => {
+  return await notion.pages.retrieveMarkdown({
+    page_id: pageID,
+  });
+};
+
+// Config paths for saving data
 const dir = "./public";
 const filePath = "./public/blogs.json";
 const blogDir = path.join(dir, "blogs");
+
+export const writeJsonFile = (targetPath, data) => {
+  const targetDir = path.dirname(targetPath);
+
+  if (!fs.existsSync(targetDir)) {
+    fs.mkdirSync(targetDir, { recursive: true });
+  }
+
+  fs.writeFileSync(targetPath, JSON.stringify(data, null, 2));
+};
 
 const handlePage = async (cleanData) => {
   const pageIds = cleanData.map((page) => page.id);
