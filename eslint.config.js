@@ -29,7 +29,14 @@ export default tseslint.config(
       "import/no-unassigned-import": [
         "error",
         {
-          allow: ["**/*.css", "**/*.scss", "**/*.sass"],
+          allow: [
+            "**/*.css",
+            "**/*.scss",
+            "**/*.sass",
+            "**/setup.{ts,tsx,js,jsx}",
+            "**/vitest.setup.{ts,tsx,js,jsx}",
+            "**/*.d.ts",
+          ],
         },
       ],
     },
